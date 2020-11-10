@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace Template
 {
@@ -32,6 +33,25 @@ namespace Template
 
             base.Initialize();
 
+            int myNum = (int)Månad.November;
+            Console.WriteLine(myNum);
+         
+
+        }
+        enum Månad
+        {
+            Januari,    // 0
+            Februari,   // 1
+            March,      // 2
+            April,      // 3
+            Maj,        // 4
+            Juni,       // 5
+            July,       // 6
+            Augusti,     // 7
+            September,   // 8
+            Oktober,     // 9
+            November,    // 10
+            December,    // 11
         }
 
         /// <summary>
