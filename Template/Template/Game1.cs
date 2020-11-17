@@ -14,6 +14,7 @@ namespace Template
         SpriteBatch spriteBatch;
         Player player;
         Vägg vägg;
+        fiende Fiende;
         //KOmentar
         public Game1()
         {
@@ -64,6 +65,7 @@ namespace Template
             spriteBatch = new SpriteBatch(GraphicsDevice);
             player = new Player(Content.Load<Texture2D>("pixel"), new Vector2(1, 1));
             vägg = new Vägg(Content.Load<Texture2D>("pixel"), new Vector2(5, 20));
+            Fiende = new fiende(Content.Load<Texture2D>("pixel"), new Vector2(50, 30));
             // TODO: use this.Content to load your game content here 
         }
 
@@ -98,6 +100,17 @@ namespace Template
                     }
                 }
             }
+
+            for (int i = -3; i < 52; i++)
+            {
+                for (int o = -3; o < 52; o++)
+                {
+                    if (player.Pos == new Vector2(i + 20, o + 200))
+                    {
+                        this.Exit();
+                    }
+                }
+            }
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -113,6 +126,7 @@ namespace Template
             spriteBatch.Begin();
             player.Draw(spriteBatch);
             vägg.Draw(spriteBatch);
+            Fiende.Draw(spriteBatch);
             spriteBatch.End();
 
             // TODO: Add your drawing code here.
